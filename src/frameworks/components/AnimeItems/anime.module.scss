@@ -1,0 +1,182 @@
+.anime__item{
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    img{
+        height: 150px;
+        width: 100%;
+    }
+    &__pic{
+        height: 25px;
+        margin-top: 5px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+        position: absolute;
+        top: 120px;
+        .ep{
+            font-size: 13px;
+            color: #ffffff;
+            background: rgba(47, 54, 64,.6);
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+        }
+        .view{
+            font-size: 13px;
+            color: #ffffff;
+            background: rgba(47, 54, 64,.6);
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+        }
+    }
+    &__text{
+        padding-top: 10px;
+        ul{
+            margin-bottom: 10px;
+            li{
+                list-style: none;
+                font-size: 10px;
+                color: #ffffff;
+                font-weight: 500;
+                padding: 1px 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50px;
+                display: inline-block;
+            }
+        }
+        h5{
+            color: #ffffff;
+            font-weight: 500;
+            font-family: "Oswald", sans-serif;
+            line-height: 21px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            position: relative;      
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;          
+        }
+    }
+}
+.filter__gallery{
+    max-height: 750px;
+    overflow-y: hidden;
+    transition: overflow-y .4s ease;
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: #e53637;
+        border-radius: 5px;
+    }
+}
+.anime__filter{
+    height: 120px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    img{
+        width: 100%;
+    }
+    .ep{
+        font-size: 13px;
+        color: #ffffff;
+        background: rgba(47, 54, 64,.6);
+        display: inline-block;
+        padding: 2px 12px;
+        border-radius: 4px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .view{
+        font-size: 13px;
+        color: #ffffff;
+        background: rgba(47, 54, 64,.6);
+        display: inline-block;
+        padding: 2px 12px;
+        border-radius: 4px;
+        position: absolute;
+        left: 10px;
+        top: 40px;
+    }
+    h5{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(47, 54, 64,.6);
+        padding: 0 30px 0 20px;
+        a{
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 26px;
+        }
+    }
+}
+.filter__gallery:hover{
+    overflow-y: auto;
+}
+.filter__gallery:hover > .anime__filter{
+    margin-right: 5px ;
+}
+
+.comment__item{
+    margin-bottom: 20px;
+	overflow: hidden;
+    cursor: pointer;
+    &__pic{
+        float: left;
+	    margin-right: 15px;
+        width: 110px;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: scale(4);
+        }
+    }
+    &__text{
+        overflow: hidden;
+        ul{
+            margin-bottom: 10px;
+            li{
+                list-style: none;
+                font-size: 10px;
+                color: #ffffff;
+                font-weight: 700;
+                padding: 1px 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50px;
+                display: inline-block;  
+            }
+        }
+        h5{
+            margin-bottom: 10px;
+            a{
+                color: #ffffff;
+                font-weight: 700;
+                line-height: 26px;
+            }
+        }
+        span{
+            display: block;
+            font-size: 13px;
+            color: #b7b7b7;
+        }
+    }
+}
