@@ -11,11 +11,11 @@ interface searchType{
     page :number
 }
 export const Search=()=>{
-    const [listResult,setListResult] = useState(null)
+    const [listResult,setListResult]:any = useState(null)
     const [searching, setSearching] = useState(false)
     const {setIsSearch} = useContext(DefaultContext)
     const [keyWord, setKeyWord] = useState("")
-    const typingRef = useRef(null)
+    const typingRef : any = useRef(null)
     const reFetchData = async(key:searchType)=>{
         const listSearch: any = await AnimeServices.search(key) 
         if(listSearch.data == 0 ){

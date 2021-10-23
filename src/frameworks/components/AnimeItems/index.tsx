@@ -2,7 +2,6 @@
 import { useRouter } from 'next/router'
 import { useContext, useState, useEffect } from 'react'
 import { DefaultContext } from '../../layout/default'
-import { Loading } from '../loading'
 import styles from './anime.module.scss'
 import Link from 'next/link'
 
