@@ -21,7 +21,7 @@ export const ListAnime:React.FC<{title:string, url:string}> =({title,url})=>{
                             </div>
                             <div className="col-lg-4 col-md-4 col-sm-4">
                                 <div className={styles.btn__all}>
-                                    <a href="#" className="primary-btn">Xem hết  <i className="fas fa-chevron-right"></i></a>
+                                    <a className="primary-btn" onClick={()=> alert('Cái này chưa biết cách tối ưu nên chưa làm :))')}>Xem hết  <i className="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
