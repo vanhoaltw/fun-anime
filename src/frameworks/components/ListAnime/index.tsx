@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import AnimeServices from '../../../services/getAnime'
 import styles from './listAnime.module.scss'
 import { AnimeItem } from '../AnimeItems'
-import { SpinnerDotted } from 'spinners-react';
 import { Loading } from '../loading'
 export const ListAnime:React.FC<{title:string, url:string}> =({title,url})=>{
     const [isLoading, setIsLoading]= useState(true)

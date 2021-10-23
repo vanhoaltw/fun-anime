@@ -9,7 +9,7 @@ interface ContextInterface{
     load ?: boolean,
     handleLoad ?: any
 }
-export const DefaultContext = createContext<ContextInterface | null>(null)
+export const DefaultContext = createContext<ContextInterface | any>(null)
 export default function DefaultLayout(props : any){
     const [load, setLoad]= useState(false)    
     const handleLoad = (status = true)=>{

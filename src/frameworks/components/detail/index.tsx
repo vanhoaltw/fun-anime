@@ -3,8 +3,7 @@ import styles from './detail.module.scss'
 import { BreadCrumb } from './Breadcrumb'
 import { useRouter } from 'next/router'
 import { detailType } from '../../../../type'
-import { Loading } from '../loading'
-import { useContext, useState } from 'react'
+import { useContext} from 'react'
 import { DefaultContext } from '../../layout/default'
 
 export const DetailAnime:React.FC<{data: detailType}> = ({data})=>{
