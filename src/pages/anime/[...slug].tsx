@@ -43,7 +43,7 @@ const WatchAnime:React.FC<{dataSource: any, listEp: any[]}> = ({dataSource,listE
                     </div>                    
                 </div>
             </div>
-            : " "}
+            : "Hiện tại phim chưa được cập nhật"}
         </DefaultLayout>
     )
 }

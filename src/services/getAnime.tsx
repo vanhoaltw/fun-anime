@@ -5,6 +5,8 @@ import { animeItem } from '../../type'
 const instanse = axios.create({
     baseURL: API_URL
 })
+
+
 export class animeItems{
     slug: string;
     view: number;
@@ -58,6 +60,18 @@ export default class AnimeServices{
         const data: any = await instanse.get(`/anime/${animeId}/episodes/${ep}`)
         if(!data) return []
         return data.data
+    }
+    static async search(props :{q:string, limit : number, page : number}){  
+        const {data} = await instanse.get('/search',{
+            params: props
+        })
+        return data
+    }
+
+    static async getCate (genres : string, slug:string, page : 1){
+        const {data} = await instanse.get(`/${genres}/${slug}?page=${page}`)
+        if(!data) return []
+        return data
     }
 
 }

@@ -4,13 +4,16 @@ import { useQuery } from 'react-query'
 import AnimeServices from '../../../services/getAnime'
 import { useRouter } from 'next/router'
 import { Loading } from '../loading'
+import { useContext, useState } from 'react'
+import { DefaultContext } from '../../layout/default'
 
-export const AnimeFilter: React.FC<{title: string, url:string,func:any}>=({title,url,func})=>{
+export const AnimeFilter: React.FC<{title: string, url:string}>=({title,url})=>{
     const {data,status} = useQuery(title, async()=> await AnimeServices.getAll(url))
+    const {handleLoad} = useContext(DefaultContext)
     const router = useRouter()
     const handleRoute = ((slug:string) => {
         router.push(`/detail/${slug}`)
-        func()
+        handleLoad()
     })
     return(
         <div className={styles.filter__gallery}>

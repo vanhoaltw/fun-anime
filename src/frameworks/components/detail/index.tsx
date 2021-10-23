@@ -4,23 +4,22 @@ import { BreadCrumb } from './Breadcrumb'
 import { useRouter } from 'next/router'
 import { detailType } from '../../../../type'
 import { Loading } from '../loading'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { DefaultContext } from '../../layout/default'
 
 export const DetailAnime:React.FC<{data: detailType}> = ({data})=>{
     const {genres,subTeams, description, id, name, views, thumbnail, slug,episodes }=data
     const router =useRouter()
-    const [load, setLoad]= useState(false)
+    const {handleLoad} = useContext(DefaultContext)
     const handleRoute=(animeId: number | string, url:string )=>{
         router.push({
             pathname: `/anime/${url}`,
             query: { id : animeId }
         })
-        setLoad(true)
+        handleLoad()
     }
     return(
         <div>
-            
-            {load ?<Loading/> : <div>
                 <BreadCrumb slug='detail' name={name}/>
             <section className="anime-details">
                     <div className="container">
@@ -75,10 +74,5 @@ export const DetailAnime:React.FC<{data: detailType}> = ({data})=>{
                         </div>
             </section>
             </div>
-            
-            
-            }
-            
-        </div>
     )
 }

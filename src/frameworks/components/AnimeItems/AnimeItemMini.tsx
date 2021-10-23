@@ -4,13 +4,16 @@ import AnimeServices from '../../../services/getAnime'
 import styles from './anime.module.scss'
 import { useRouter } from 'next/router'
 import { Loading } from '../loading'
-export const AnimeItemMini:React.FC<{title:string, url:string,func:any}> = ({title, url,func})=>{
+import { useContext } from 'react'
+import { DefaultContext } from '../../layout/default'
+
+export const AnimeItemMini:React.FC<{title:string, url:string}> = ({title, url})=>{
     const {data,status} = useQuery(title, async()=>AnimeServices.getAll(url))
     const router = useRouter()
+    const {handleLoad} = useContext(DefaultContext)
     const handleRoute = ((slug:string) => {
-        console.log('=====',slug)
         router.push(`/detail/${slug}`)
-        func()
+        handleLoad()
     })
     return (
             <div className={styles.filter__gallery}>

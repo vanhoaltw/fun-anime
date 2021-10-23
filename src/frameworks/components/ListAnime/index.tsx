@@ -5,7 +5,7 @@ import styles from './listAnime.module.scss'
 import { AnimeItem } from '../AnimeItems'
 import { SpinnerDotted } from 'spinners-react';
 import { Loading } from '../loading'
-export const ListAnime:React.FC<{title:string, url:string,func:any}> =({title,url,func})=>{
+export const ListAnime:React.FC<{title:string, url:string}> =({title,url})=>{
     const [isLoading, setIsLoading]= useState(true)
     const {data,status} = useQuery(title, async()=> await AnimeServices.getAll(url))
     let width = 0 
@@ -28,7 +28,7 @@ export const ListAnime:React.FC<{title:string, url:string,func:any}> =({title,ur
                         <div className="row">
                             {
                                 data ? data.slice(0,width).map((value,index)=>(
-                                    <AnimeItem dataItem={value} key={index} func={func}/>                              
+                                    <AnimeItem dataItem={value} key={index}/>                              
                                 )) : <Loading/>
                             }
                         </div>

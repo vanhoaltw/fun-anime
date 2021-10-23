@@ -1,0 +1,29 @@
+.pagination_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    button{
+        padding: 2px;
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        background-color: transparent;
+        color: #ffffff;
+        width: 30px;
+        font-weight: bolder;
+        height: 30px;
+        line-height: 15px;
+        text-align: center;
+        margin: 0 5px;
+        font-size: 12px;
+        &:disabled{
+            color: #34495e;
+        }        
+    }
+    .pagination_item{
+        &.active{
+            background-color: #c0392b;
+            border: transparent;
+        }
+    }
+}
